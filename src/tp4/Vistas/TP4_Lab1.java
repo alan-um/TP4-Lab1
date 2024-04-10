@@ -40,8 +40,11 @@ public class TP4_Lab1 extends javax.swing.JFrame {
         jbConvertir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jtTempF = new javax.swing.JTextField();
+        jButtonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Conversor de temperatura");
+        setBackground(new java.awt.Color(241, 238, 220));
         setPreferredSize(new java.awt.Dimension(400, 350));
         setResizable(false);
 
@@ -64,6 +67,7 @@ public class TP4_Lab1 extends javax.swing.JFrame {
             }
         });
 
+        jbConvertir.setBackground(new java.awt.Color(179, 200, 207));
         jbConvertir.setText("jbConvertir");
         jbConvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +86,19 @@ public class TP4_Lab1 extends javax.swing.JFrame {
         jtTempF.setEditable(false);
         jtTempF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtTempF.setText("jtTempF");
+        jtTempF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtTempFActionPerformed(evt);
+            }
+        });
+
+        jButtonSalir.setBackground(new java.awt.Color(190, 215, 220));
+        jButtonSalir.setText("Salir");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,12 +113,15 @@ public class TP4_Lab1 extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(jLabel3)
-                        .addComponent(jbConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jtTempF, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(113, 113, 113))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel3)
+                    .addComponent(jbConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtTempF, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalir)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +138,9 @@ public class TP4_Lab1 extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtTempF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonSalir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,6 +171,15 @@ public class TP4_Lab1 extends javax.swing.JFrame {
             convetir();//Llama al metodo Convertir, sus intrucciones están más abajo!!
         }
     }//GEN-LAST:event_jbConvertirKeyPressed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+
+     dispose();        
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jtTempFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtTempFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtTempFActionPerformed
 
     
     /**
@@ -187,6 +218,7 @@ public class TP4_Lab1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -220,6 +252,6 @@ public class TP4_Lab1 extends javax.swing.JFrame {
         
         //Muestra los datos en el jTextTempF
         jtTempF.setText(Double.toString(tempF));
-        jtTempF.requestFocus();
+        jtTempF.requestFocus();                
     }
 }
