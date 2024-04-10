@@ -1,6 +1,7 @@
 package tp4.Vistas;
 
 import java.awt.event.KeyEvent;
+import static java.time.Clock.system;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -174,7 +175,7 @@ public class TP4_Lab1 extends javax.swing.JFrame {
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
 
-     dispose();        
+     System.exit(0);        
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jtTempFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtTempFActionPerformed
